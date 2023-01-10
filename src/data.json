@@ -1,0 +1,28 @@
+{
+  "Destinations": [
+    {
+      "canLever": [1]
+    },
+    {
+      "canLever": [2]
+    },
+    {
+      "canLever": [3, 5, 9]
+    },
+    {
+      "canLever": [4, 6, 10]
+    },
+    {
+      "canLever": [1, 2]
+    },
+    {
+      "canLever": [2, 8]
+    },
+    {
+      "canLever": [7, 9]
+    },
+    {
+      "canLever": [8]
+    }
+  ]
+}
