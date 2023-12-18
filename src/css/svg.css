@@ -1,0 +1,246 @@
+/* .cls-1 {
+  letter-spacing: .1em;
+} */
+
+.cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+  font-family: KikaiChokokuJIS-Md-83pv-RKSJ-H, 'Kikai Chokoku JIS';
+}
+
+.font {
+  font-family: KikaiChokokuJIS-Md-83pv-RKSJ-H, 'Kikai Chokoku JIS';
+}
+
+.cls-3 {
+  fill: #ffffee;
+}
+
+.cls-3, .cls-4, .cls-5 {
+  font-size: 6px;
+}
+
+.cls-4, .cls-9, .cls-10, .cls-11, .cls-12, .cls-8 {
+  fill: #ffffee;
+}
+
+.cls-5, .cls-13, .cls-14, .cls-7 {
+  fill: #000000;
+}
+
+.cls-15, .cls-16 {
+  fill: #00693e;
+}
+
+.cls-17 {
+  fill: #9fa0a0;
+}
+
+.cls-18 {
+  fill: #8fc31f;
+}
+
+.cls-19 {
+  fill: #babbbb;
+}
+
+.cls-20 {
+  fill: #cac9c1;
+}
+
+.cls-21 {
+  fill: #2f2725;
+}
+
+/* .cls-22 {
+  letter-spacing: -.2em;
+} */
+
+.cls-23, .cls-24, .cls-16, .cls-25, .cls-26, .cls-27, .cls-10, .cls-28, .cls-29, .cls-30, .cls-31, .cls-14, .cls-32, .cls-33, .cls-34, .cls-11, .cls-35 {
+  stroke-miterlimit: 10;
+}
+
+.cls-23, .cls-24, .cls-31, .cls-14 {
+  stroke-width: .25px;
+}
+
+.cls-23, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-14, .cls-32, .cls-33, .cls-11, .cls-35 {
+  stroke: #ffffee;
+}
+
+.stroke_white {
+  stroke: #ffffee;
+}
+
+.cls-23, .cls-27 {
+  fill: #fcc800;
+}
+
+.cls-24 {
+  stroke: #2f2725;
+  stroke-linecap: round;
+}
+
+.cls-24, .cls-35 {
+  fill: none;
+}
+
+.cls-16, .cls-25, .cls-26, .cls-27, .cls-10, .cls-28, .cls-29, .cls-30, .cls-32, .cls-33, .cls-34, .cls-35 {
+  stroke-width: .5px;
+}
+
+.cls-16, .cls-25, .cls-10, .cls-34 {
+  stroke: #231815;
+}
+
+.cls-25, .cls-29 {
+  fill: #00479d;
+}
+
+.cls-26 {
+  fill: #eb6100;
+}
+
+.cls-28 {
+  fill: #f39800;
+}
+
+.cls-30 {
+  fill: #094;
+}
+
+.cls-31, .cls-33, .cls-34 {
+  fill: #f00;
+}
+
+.red {
+  fill: #C2050F;
+}
+
+.cls-32 {
+  fill: #660099;
+}
+
+.cls-6 {
+  fill: #f4f3f9;
+  font-size: 2px;
+}
+
+.cls-36 {
+  font-family: TsukuARdGothic-Regular-83pv-RKSJ-H, 'Tsukushi A Round Gothic';
+}
+
+.cls-11 {
+  font-family: UDShinMGoPr6N-Light-83pv-RKSJ-H, 'A-OTF UD Shin Maru Go Pr6N';
+  stroke-width: .05px;
+}
+
+.cls-11, .cls-12, .cls-8 {
+  font-size: 5px;
+}
+
+.cls-35 {
+  stroke-linecap: square;
+}
+
+.cls-7 {
+  font-size: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #000000;
+  font-family: "Kikai Chokoku JIS";
+  width: 100%;
+  & header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background: linear-gradient(black, transparent);
+    text-align: left !important;
+    & img {
+      padding: 0 0.125rem;
+      height: 2rem;
+    }
+    & button {
+      margin: 0;
+      border: none;
+      padding: 1rem 0.125rem 0.25rem 0.125rem;
+      background-color: transparent;
+      color: #ffe;
+      vertical-align: top;
+      font-size: 1rem;
+      line-height: 0.75rem;
+      font-family: "helvetica";
+    }
+  }
+  & svg {
+    margin-top: 2rem;
+    vertical-align: top;
+  }
+  
+}
+
+.active {transition: all .25s;}
+.active:hover {filter: brightness(0.75);}
+.active:active {filter: brightness(0.5);}
+
+.filter {
+  filter: brightness(0.75);
+}
+
+.time {
+  font-family: 'DSEG7Classic-BoldItalic';
+  font-size: 10px;
+}
+
+.text {
+  font-family: 'Kikai Chokoku JIS';
+  font-size: 6px;
+}
+
+.caption {
+  font-family: 'Kikai Chokoku JIS';
+  font-size: 4px;
+}
+
+.ContentLenderG {
+  
+  
+}
+
+.Lever {
+  & g {
+    transition: transform .2s cubic-bezier(.75, .25, .75, .25);
+  }
+}
