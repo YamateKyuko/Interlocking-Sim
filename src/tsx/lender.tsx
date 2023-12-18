@@ -3,7 +3,7 @@ import './../css/svg.css';
 
 import { template__Data } from "./../template"
 
-import img from "./../img/Interlocking-sim.svg"
+import img from "./../img/Interlocking-Sim.svg"
 
 var white: string = "#ffffee"
 var black: string = "#767676"
