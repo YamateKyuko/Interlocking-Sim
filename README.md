@@ -1,3 +1,3 @@
 # Interlocking-Sim
 
-![Sim](src/img/Interlocking-sim.svg)
+# ![Sim](src/img/Interlocking-sim.svg)
