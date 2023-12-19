@@ -1,3 +1,11 @@
-# Interlocking-Sim
+# ![Interlocking-Sim](src/img/Interlocking-sim.svg)
 
-# ![Sim](src/img/Interlocking-sim.svg)
+連動装置シミュレーションゲーム
+
+を作ろうとしたものです...
+
+何かのお役に立てるよう公開します...
+
+使えそうだったらぜひ...
+
+何かに使うときは、ご連絡いただけますと、幸いです...
