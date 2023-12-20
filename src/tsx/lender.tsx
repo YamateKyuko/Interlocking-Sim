@@ -59,14 +59,33 @@ function Lender(props: Lender_props) {
     }
   })
 
+  const caption: React.CSSProperties = {
+    fontSize: "6px",
+    fill: white,
+    fontFamily: "Kikai Chokoku JIS",
+    textAnchor: "middle",
+    dominantBaseline: "central"
+  }
+
 
   return (
     <>
-      <header>
-        <img src={img} alt="Interlocking-Sim" />
-        <button>Pause</button>
-      </header>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 225" width={1000} height={450}>
+      <nav>
+        <article>
+          <ul>
+            <li>Thanks for using the Interlocking-Sim.</li>
+            <li><a href="https://github.com/YamateKyuko/Interlocking-Sim">github</a></li>
+            <li><button>New Sim</button></li>
+            <li><button>Re Start</button></li>
+          </ul>
+        </article>
+        <header>
+          <img src={img} alt="Interlocking-Sim" />
+          <button>Pause</button>
+        </header>
+      </nav>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 225" width={10000} height={4500}>
         {/* 背景 */}
         <g> 
           {/* <rect fill={white} className="cls-9" width="500" height="225"/> */}
@@ -78,7 +97,7 @@ function Lender(props: Lender_props) {
         <text className="time" x="250" y="22.5" fill={red} textAnchor="middle">{changer(props.time)}</text>
 
         <text className="cls-8" transform="translate(472.5 128.85)"><tspan x="0" y="0">田舎線</tspan><tspan x="-2.5" y="5">田舎方面</tspan></text>
-        <text className="cls-4" transform="translate(24 37.04)"><tspan x="0" y="0">停止</tspan></text>
+        <text style={caption} transform="translate(24 37.04)"><tspan x="0" y="0">停止</tspan></text>
         <g>
           <text className="cls-12" transform="translate(20 88.85)"><tspan className="cls-2"><tspan x="0" y="0">上り本線</tspan></tspan><tspan className="cls-2" x="0" y="5">都</tspan><tspan className="cls-36" x="5" y="5">　</tspan><tspan className="cls-2" x="10" y="5">方面</tspan></text>
           <text className="cls-11" transform="translate(25 93.89)"><tspan x="0" y="0">会</tspan></text>
@@ -88,15 +107,17 @@ function Lender(props: Lender_props) {
           <text className="cls-11" transform="translate(470 43.89)"><tspan x="0" y="0">郊</tspan></text>
         </g>
         <g>
-          <text className="cls-4" transform="translate(469 17.04)"><tspan x="0" y="0">電源</tspan></text>
+          <text style={caption} transform="translate(469 17.04)"><tspan x="0" y="0">電源</tspan></text>
           <circle className="cls-18" cx="475" cy="25" r="1"/>
         </g>
         <path className="cls-9" d="M249.5,36.75v6.5h-69v-6.5h69m.5-.5h-70v7.5h70v-7.5h0Z"/>
-        <path className="cls-9" d="M254.5,76.75v16.5h-69v-8.5h-5v-8h74m.5-.5h-75v9h5v8.49h70s0-17.49,0-17.49h0Z"/>
+        
+        <path className="cls-9" d="M254.5,76.75v16.5h-69v-16.5h69m.5-.5h-70v17.5h70v-17.5h0Z"/>
+
         <path className="cls-9" d="M254.5,126.75v7.75h-5v8.75h-69v-16.5h74m.5-.5h-75v17.5h70v-8.75h5v-8.75h0Z"/>
-        <text className="cls-4" transform="translate(468 167.29)"><tspan x="0" y="0">上本</tspan></text>
-        <text className="cls-4" transform="translate(20 167.29)"><tspan x="0" y="0">下本</tspan></text>
-        <text className="cls-4" transform="translate(438 167.29)"><tspan x="0" y="0">田舎</tspan></text>
+        <text style={caption} transform="translate(468 167.29)"><tspan x="0" y="0">上本</tspan></text>
+        <text style={caption} transform="translate(20 167.29)"><tspan x="0" y="0">下本</tspan></text>
+        <text style={caption} transform="translate(438 167.29)"><tspan x="0" y="0">田舎</tspan></text>
         
         
         {/* 下り都会方面 */}
@@ -107,19 +128,21 @@ function Lender(props: Lender_props) {
         <g>
           <Rail points="118.54 52.5 107.5 52.5 107.5 57.5 116.46 57.5 123.23 64.27 126.77 60.73 118.54 52.5" color={uguisu} use={props.use} index={2} />
           <Rail points="75 47.5 150 47.5 150 52.5 75 52.5 75 47.5" color={uguisu} use={props.use} index={2} />
-          <text className="cls-4" transform="translate(108.18 63.04)"><tspan x="0" y="0">01</tspan></text>
+          <text style={caption} transform="translate(108.18 63.04)"><tspan x="0" y="0">01</tspan></text>
         </g>
         {/* 1 */}
         <g>
           <Rail points="231 47.5 150 47.5 150 52.5 231 52.5 231 54.5 235 52.5 235 47.5 231 45.5 231 47.5" color={red} use={props.use} index={4} />
-          <Rail points="240 47.5 350 47.5 350 52.5 240 52.5 240 47.5" color={red} use={props.use} index={4} />
-          <text className="cls-4" transform="translate(235.34 52.29)"><tspan x="0" y="0">1</tspan></text>
+          <Rail points="240 47.5 270 47.5 270 52.5 240 52.5 240 47.5" color={red} use={props.use} index={4} />
+          <Rail points="285 47.5 350 47.5 350 52.5 285 52.5 285 47.5" color={red} use={props.use} index={4} />
+          <text style={caption} x="237.5" y="50" textAnchor="middle" dominantBaseline="central">1</text>
+          <text style={caption} x="277.5" y="50" textAnchor="middle" dominantBaseline="central">下本</text>
         </g>
         {/* 04 */}
         <g>
           <Rail points="381.46 52.5 392.5 52.5 392.5 57.5 383.54 57.5 376.77 64.27 373.23 60.73 381.46 52.5" color={uguisu} use={props.use} index={6} />
           <Rail points="350 47.5 425 47.5 425 52.5 350 52.5 350 47.5" color={uguisu} use={props.use} index={6} />
-          <text className="cls-4" transform="translate(383.18 63.04)"><tspan x="0" y="0">04</tspan></text>
+          <text style={caption} transform="translate(383.18 63.04)"><tspan x="0" y="0">04</tspan></text>
         </g>
         {/* 下り郊外方面 */}
         <g>
@@ -129,13 +152,17 @@ function Lender(props: Lender_props) {
         <g>
           <Rail points="135 67.5 133.54 67.5 126.77 60.73 123.23 64.27 131.46 72.5 135 72.5 180 72.5 180 67.5 135 67.5" color={bluegreen} use={props.use} index={10} />
           <Rail points="137.5 72.5 136.46 72.5 125.73 83.23 129.27 86.77 138.54 77.5 147.5 77.5 147.5 72.5 137.5 72.5" color={bluegreen} use={props.use} index={10} />
-          <text className="cls-4" transform="translate(138.18 83.04)"><tspan x="0" y="0">03</tspan></text>
+          <text style={caption} transform="translate(138.18 83.04)"><tspan x="0" y="0">03</tspan></text>
         </g>
         {/* 2 */}
         <g>
-          <Rail points="244 67.5 244 65.5 240 67.5 240 72.5 244 74.5 244 72.5 305 72.5 305 67.5 244 67.5" color={red} use={props.use} index={12} />
           <Rail points="231 67.5 180 67.5 180 72.5 231 72.5 231 74.5 235 72.5 235 67.5 231 65.5 231 67.5" color={red} use={props.use} index={12} />
-          <text className="cls-4" transform="translate(235.34 72.29)"><tspan x="0" y="0">2</tspan></text>
+          <Rail points="244 67.5 244 65.5 240 67.5 240 72.5 244 74.5 244 72.5 270 72.5 270 67.5 244 67.5" color={red} use={props.use} index={12} />
+          <Rail points="285 67.5 305 67.5 305 72.5 285 72.5 285 67.5" color={red} use={props.use} index={12} />
+          
+          
+          <text style={caption} x="237.5" y="70">2</text>
+          <text style={caption} x="277.5" y="70">中線</text>
         </g>
         {/* 上り郊外方面 */}
         <g>
@@ -146,21 +173,21 @@ function Lender(props: Lender_props) {
           <Rail points="285 97.5 425 97.5 425 102.5 285 102.5 285 97.5" color={green} use={props.use} index={3} />
           <Rail points="374.27 83.23 383.54 92.5 392.5 92.5 392.5 97.5 382.5 97.5 381.46 97.5 370.73 86.77 374.27 83.23" color={green} use={props.use} index={3} />
           <Rail points="325.73 83.23 329.27 86.77 306.77 109.27 303.23 105.73 325.73 83.23" color={green} use={props.use} index={3} />
-          <text className="cls-4" transform="translate(383.18 91.54)"><tspan x="0" y="0">05</tspan></text>
+          <text style={caption} transform="translate(383.18 91.54)"><tspan x="0" y="0">05</tspan></text>
         </g>
         {/* 3 */}
         <g>
           <Rail points="285 97.5 244 97.5 244 95.5 240 97.5 240 102.5 244 104.5 244 102.5 285 102.5 285 97.5" color={red} use={props.use} index={5} />
           <Rail points="165 97.5 235 97.5 235 102.5 165 102.5 165 97.5" color={red} use={props.use} index={5} />
-          <text className="cls-4" transform="translate(235.34 102.29)"><tspan x="0" y="0">3</tspan></text>
+          <text style={caption} transform="translate(235.34 102.29)"><tspan x="0" y="0">3</tspan></text>
         </g>
         {/* 02 10 */}
         <g>
           <Rail points="165 122.5 146.46 122.5 131.46 107.5 122.5 107.5 122.5 102.5 133.54 102.5 148.54 117.5 165 117.5 165 122.5" color={green} use={props.use} index={7} />
           <Rail points="75 97.5 165 97.5 165 102.5 75 102.5 75 97.5" color={green} use={props.use} index={7} />
           <Rail points="125.73 83.23 116.46 92.5 107.5 92.5 107.5 97.5 117.5 97.5 118.54 97.5 129.27 86.77 125.73 83.23" color={green} use={props.use} index={7} />
-          <text className="cls-4" transform="translate(108.18 91.54)"><tspan x="0" y="0">02</tspan></text>
-          <text className="cls-4" transform="translate(123.18 113.04)"><tspan x="0" y="0">10</tspan></text>
+          <text style={caption} transform="translate(108.18 91.54)"><tspan x="0" y="0">02</tspan></text>
+          <text style={caption} transform="translate(123.18 113.04)"><tspan x="0" y="0">10</tspan></text>
         </g>
         {/* 上り都会方面 */}
         <g>
@@ -171,8 +198,8 @@ function Lender(props: Lender_props) {
           <Rail points="365 67.5 366.46 67.5 373.23 60.73 376.77 64.27 368.54 72.5 365 72.5 305 72.5 305 67.5 365 67.5" color={bluegreen} use={props.use} index={11} />
           <Rail points="362.5 72.5 363.54 72.5 374.27 83.23 370.73 86.77 361.46 77.5 352.5 77.5 352.5 72.5 362.5 72.5" color={bluegreen} use={props.use} index={11} />
           <Rail points="337.5 72.5 336.46 72.5 325.73 83.23 329.27 86.77 338.54 77.5 347.5 77.5 347.5 72.5 337.5 72.5" color={bluegreen} use={props.use} index={11} />
-          <text className="cls-4" transform="translate(353.18 83.04)"><tspan x="0" y="0">06</tspan></text>
-          <text className="cls-4" transform="translate(338.18 83.04)"><tspan x="0" y="0">07</tspan></text>
+          <text style={caption} transform="translate(353.18 83.04)"><tspan x="0" y="0">06</tspan></text>
+          <text style={caption} transform="translate(338.18 83.04)"><tspan x="0" y="0">07</tspan></text>
         </g>
         {/* 田舎方面 */}
         <g>
@@ -188,25 +215,25 @@ function Lender(props: Lender_props) {
         <g>
           <Rail points="326.46 147.5 337.5 147.5 337.5 142.5 328.54 142.5 316.77 130.73 313.23 134.27 326.46 147.5" color={bluegreen} use={props.use} index={14} />
           <Rail points="295 147.5 370 147.5 370 152.5 295 152.5 295 147.5" color={bluegreen} use={props.use} index={14} />
-          <text className="cls-4" transform="translate(328.18 141.54)"><tspan x="0" y="0">09</tspan></text>
+          <text style={caption} transform="translate(328.18 141.54)"><tspan x="0" y="0">09</tspan></text>
         </g>
         {/* 5 */}
         <g>
           <Rail points="244 145.5 240 147.5 240 152.5 244 154.5 244 152.5 295 152.5 295 147.5 244 147.5 244 145.5" color={blue} use={props.use} index={15} />
           <Rail points="231 145.5 231 147.5 180 147.5 180 152.5 231 152.5 231 154.5 235 152.5 235 147.5 231 145.5" color={blue} use={props.use} index={15} />
-          <text className="cls-4" transform="translate(235.34 152.29)"><tspan x="0" y="0">5</tspan></text>
+          <text style={caption} transform="translate(235.34 152.29)"><tspan x="0" y="0">5</tspan></text>
         </g>
         {/* 08 */}
         <g>
           <Rail points="298.54 117.5 287.5 117.5 287.5 112.5 296.46 112.5 303.23 105.73 306.77 109.27 298.54 117.5" color={uguisu} use={props.use} index={16} />
           <Rail points="300 122.5 301.46 122.5 313.23 134.27 316.77 130.73 303.54 117.5 300 117.5 255 117.5 255 122.5 300 122.5" color={uguisu} use={props.use} index={16} />
-          <text className="cls-4" transform="translate(288.18 111.54)"><tspan x="0" y="0">08</tspan></text>
+          <text style={caption} transform="translate(288.18 111.54)"><tspan x="0" y="0">08</tspan></text>
         </g>
         {/* 4 */}
         <g>
           <Rail points="244 122.5 255 122.5 255 117.5 244 117.5 244 115.5 240 117.5 240 122.5 244 124.5 244 122.5" color={blue} use={props.use} index={17} />
           <Rail points="231 117.5 165 117.5 165 122.5 231 122.5 231 124.5 235 122.5 235 117.5 231 115.5 231 117.5" color={blue} use={props.use} index={17} />
-          <text className="cls-4" transform="translate(235.34 122.29)"><tspan x="0" y="0">4</tspan></text>
+          <text style={caption} transform="translate(235.34 122.29)"><tspan x="0" y="0">4</tspan></text>
         </g>
         
         <Lamp x={30} y={50} rotate={0} index={0} route={props.route} train={props.train} />
@@ -303,13 +330,14 @@ function Lender(props: Lender_props) {
         <circle className="cls-30" cx="455" cy="165" r="3.5"/>
 
         {/* nl */}
-        <g>
+        {/* <g>
           <text className="cls-6" transform="translate(254.28 139.68)"><tspan x="0" y="0">N</tspan></text>
           <text className="cls-6" transform="translate(259.3 141.68)"><tspan x="0" y="0">R</tspan></text>
-        </g>
+        </g> */}
 
         {/* 信号 */}
         <g>
+          
           <path className="cls-13" d="M167.25,75h-5c-1.66,0-3,1.34-3,3s1.34,3,3,3h5c1.66,0,3-1.34,3-3s-1.34-3-3-3Z"/>
           <path className="cls-13" d="M167.25,125h-5c-1.66,0-3,1.34-3,3s1.34,3,3,3h5c1.66,0,3-1.34,3-3s-1.34-3-3-3Z"/>
           <path className="cls-13" d="M272.25,109h-5c-1.66,0-3,1.34-3,3s1.34,3,3,3h5c1.66,0,3-1.34,3-3s-1.34-3-3-3Z"/>
@@ -329,6 +357,18 @@ function Lender(props: Lender_props) {
             <path className="cls-13" d="M358.75,154h-7.5c-1.66,0-3,1.34-3,3s1.34,3,3,3h7.5c1.66,0,3-1.34,3-3s-1.34-3-3-3Z"/>
             <path className="cls-13" d="M353.75,161h-7.5c-1.66,0-3,1.34-3,3s1.34,3,3,3h7.5c1.66,0,3-1.34,3-3s-1.34-3-3-3Z"/>
           </g>
+
+
+
+          <Signal x={90} y={37.5} dir="r" />
+          <Signal x={90} y={42} dir="r_" />
+          <Signal x={180} y={78} dir="l" />
+          <Signal x={165} y={108} dir="l" />
+          <Signal x={165} y={128} dir="l" />
+
+          
+
+          
         </g>
 
         <Time x={15} y={192.5} switch={"l"} Data={Data} index={1} />
@@ -341,66 +381,6 @@ function Lender(props: Lender_props) {
         {/* <rect className="cls-13" x="307.5" y="131" width="15" height="3" transform="translate(185.95 -183.93) rotate(45)"/> */}
         {/* <rect className="cls-13" x="117.5" y="61" width="15" height="3" transform="translate(80.81 -70.08) rotate(45)"/> */}
         
-        {/* ncr */}
-        <g>
-          <text className="cls-6" transform="translate(69.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(74.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(79.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="80" cy="13" r="1"/>
-          <circle className="cls-13" cx="70" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(84.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(89.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(94.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="95" cy="13" r="1"/>
-          <circle className="cls-13" cx="85" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(99.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(104.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(109.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="110" cy="13" r="1"/>
-          <circle className="cls-13" cx="100" cy="13" r="1"/>
-        </g>
-        <g>
-          <text className="cls-6" transform="translate(389.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(394.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(399.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="400" cy="13" r="1"/>
-          <circle className="cls-13" cx="390" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(404.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(409.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(414.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="415" cy="13" r="1"/>
-          <circle className="cls-13" cx="405" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(419.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(424.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(429.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="430" cy="13" r="1"/>
-          <circle className="cls-13" cx="420" cy="13" r="1"/>
-        </g>
-        <g>
-          <text className="cls-6" transform="translate(359.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(364.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(369.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="370" cy="13" r="1"/>
-          <circle className="cls-13" cx="360" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(329.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(334.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(339.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="340" cy="13" r="1"/>
-          <circle className="cls-13" cx="330" cy="13" r="1"/>
-          <text className="cls-6" transform="translate(344.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(349.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(354.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="355" cy="13" r="1"/>
-          <circle className="cls-13" cx="345" cy="13" r="1"/>
-        </g>
-        <g>
-          <text className="cls-6" transform="translate(129.28 16.68)"><tspan x="0" y="0">N</tspan></text>
-          <text className="cls-6" transform="translate(134.3 14.68)"><tspan x="0" y="0">C</tspan></text>
-          <text className="cls-6" transform="translate(139.3 16.68)"><tspan x="0" y="0">R</tspan></text>
-          <circle className="cls-13" cx="140" cy="13" r="1"/>
-          <circle className="cls-13" cx="130" cy="13" r="1"/>
-        </g>
-
         {/* 着点スイッチ */}
         <g>
           <Switch x={225} y={50} func={props.destination} color={white} stroke={black} index={0} />
@@ -426,47 +406,76 @@ function Lender(props: Lender_props) {
 
         {/* てこ */}
         <g>
-          <Lever x={475} y={150} func={course} operating={props.operating_levers} color={yellow} lr="" index={21} />
+          <Lever x={475} y={150} func={course} operating={props.operating_levers} color={yellow} symbol="lr" index={21} />
 
-          {/* <Lever x={75} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={11} />
-          <Lever x={90} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={12} />
-          <Lever x={105} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={13} />
-          <Lever x={395} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={14} />
-          <Lever x={410} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={15} />
-          <Lever x={425} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={16} />
-          <Lever x={335} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={17} />
-          <Lever x={350} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={18} />
-          <Lever x={365} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={19} />
-          <Lever x={135} y={25} course={course} operating_levers={props.operating_levers} color={black} lr="" index={20} /> */}
+          <Lever x={75} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={1} />
+          <Lever x={90} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={2} />
+          <Lever x={105} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={3} />
+          <Lever x={395} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={4} />
+          <Lever x={410} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={5} />
+          <Lever x={425} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={6} />
+          <Lever x={335} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={7} />
+          <Lever x={350} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={8} />
+          <Lever x={135} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={9} />
+          <Lever x={365} y={25} func={course} operating={props.operating_levers} color={black} symbol="ncr" index={10} />
 
-          <Lever x={75} y={50} func={course} operating={props.operating_levers} color={red} lr="n_r" index={0} />
-          <Lever x={425} y={100} func={course} operating={props.operating_levers} color={red} lr="n_l" index={1} />
-          <Lever x={255} y={50} func={course} operating={props.operating_levers} color={red} lr="n_r" index={2} />
-          <Lever x={180} y={100} func={course} operating={props.operating_levers} color={red} lr="n_l" index={3} />
-          <Lever x={255} y={70} func={course} operating={props.operating_levers} color={red} lr="n_r" index={4} />
-          <Lever x={180} y={70} func={course} operating={props.operating_levers} color={red} lr="n_l" index={5} />
-          <Lever x={255} y={150} func={course} operating={props.operating_levers} color={red} lr="n_r" index={6} />
-          <Lever x={370} y={150} func={course} operating={props.operating_levers} color={red} lr="n_l" index={7} />
-          <Lever x={255} y={120} func={course} operating={props.operating_levers} color={red} lr="n_r" index={8} />
-          <Lever x={180} y={120} func={course} operating={props.operating_levers} color={red} lr="n_l" index={9} />
+          <Lever x={75} y={50} func={course} operating={props.operating_levers} color={red} symbol="nr" index={0} />
+          <Lever x={425} y={100} func={course} operating={props.operating_levers} color={red} symbol="nl" index={1} />
+          <Lever x={255} y={50} func={course} operating={props.operating_levers} color={red} symbol="nr" index={2} />
+          <Lever x={180} y={100} func={course} operating={props.operating_levers} color={red} symbol="nl" index={3} />
+          <Lever x={255} y={70} func={course} operating={props.operating_levers} color={red} symbol="nr" index={4} />
+          <Lever x={180} y={70} func={course} operating={props.operating_levers} color={red} symbol="nl" index={5} />
+          <Lever x={255} y={150} func={course} operating={props.operating_levers} color={red} symbol="nr" index={6} />
+          <Lever x={370} y={150} func={course} operating={props.operating_levers} color={red} symbol="nl" index={7} />
+          <Lever x={255} y={120} func={course} operating={props.operating_levers} color={red} symbol="nr" index={8} />
+          <Lever x={180} y={120} func={course} operating={props.operating_levers} color={red} symbol="nl" index={9} />
 
 
-          <Lever x={60} y={165} func={course} operating={[]} color={white} lr="n_r" index={0} />
-          <Lever x={75} y={165} func={course} operating={[]} color={white} lr="n_r" index={1} />
-          <Lever x={90} y={165} func={course} operating={[]} color={white} lr="n_r" index={2} />
-          <Lever x={105} y={165} func={course} operating={[]} color={white} lr="n_r" index={3} />
-          <Lever x={120} y={165} func={course} operating={[]} color={white} lr="n_r" index={4} />
+          <Lever x={60} y={165} func={course} operating={[]} color={white} symbol="nr" index={0} />
+          <Lever x={75} y={165} func={course} operating={[]} color={white} symbol="nr" index={1} />
+          <Lever x={90} y={165} func={course} operating={[]} color={white} symbol="nr" index={2} />
+          <Lever x={105} y={165} func={course} operating={[]} color={white} symbol="nr" index={3} />
+          <Lever x={120} y={165} func={course} operating={[]} color={white} symbol="nr" index={4} />
         </g>
       </svg>
     </>
   );
 }
 
+type Signal_props = {
+  x: number,
+  y: number,
+  dir: string,
+}
+
+function Signal(props: Signal_props) {
+  const x = (index: number): number => {
+    if (props.dir === "r_") return props.x + index - 4.5
+    if (props.dir === "r") return props.x + index
+    if (props.dir === "l") return props.x - index
+    return props.x
+  }
+
+  const y = (index: number): number => {return props.y + index}
+  
+  return (
+    <>
+      <circle cx={x(9)} cy={props.y} r="2.75" fill="transparent" stroke={white} stroke-width={0.5} />
+      <path d={`M${x(11)} ${y(2)} ${x(7)} ${y(-2)} M ${x(7)} ${y(2)} ${x(11)} ${y(-2)}`} stroke={white} stroke-width={0.5} />
+      <circle cx={x(9)} cy={props.y} r="1.5" fill={red} stroke={white} strokeWidth={0.25} />
+      {/* <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" /> */}
+      {props.dir === "l" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
+      {props.dir === "r" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
+      {props.dir === "r_" && <path d={`M${x(5.25)} ${y(-4.5)} V ${y(0)} H ${x(6)}`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
+    </>
+  )
+}
+
 type Lever_props = {
   x: number,
   y: number,
   color: string,
-  lr: string,
+  symbol: string,
   index: number,
   func: any,
   operating: number[]
@@ -478,7 +487,9 @@ function Lever(props: Lever_props) {
     let indexOf: number = props.operating.indexOf(props.index)
     target.style.transformOrigin = (props.x / 500 * 100) + "% " + (props.y / 225 * 100) + "%"
     if (indexOf === -1) {
-      target.style.transform = `rotate(30deg)`
+      if (props.symbol === "nl") {target.style.transform = "rotate(-30deg)"}
+      if (props.symbol === "nr") {target.style.transform = "rotate(30deg)"}
+      
       props.func(props.index)
     } else {
       target.style.transform = `rotate(0deg)`
@@ -515,7 +526,7 @@ function Lever(props: Lever_props) {
           fill={text_color}
           fontSize="4px"
         >
-          {props.index >= 9 && props.index < 19
+          {props.index === 10
           ?
             <>
               <tspan letterSpacing="-0.75">1</tspan>
@@ -533,26 +544,53 @@ function Lever(props: Lever_props) {
           opacity="0"
         />
       </g>
-      <text
-        x={props.x} 
-        y={props.y - 11}
-        textAnchor="middle"
-        dominantBaseline="central"
-        fill={white}
-        className="font"
-        fontSize="2px"
-      >N</text>
-      <text
-        x={props.x + 6} 
-        y={props.y - 10}
-        textAnchor="middle"
-        dominantBaseline="central"
-        fill={white}
-        className="font"
-        fontSize="2px"
-      >R</text>
+
+      {props.symbol === "nl" && <Symbol x={props.x - 6} y={props.y - 10} value="L" />}
+      {(props.symbol === "nl" || props.symbol === "nr") && <Symbol x={props.x} y={props.y - 11} value="N" />}
+      {props.symbol === "nr" && <Symbol x={props.x + 6} y={props.y - 10} value="R" />}
+      
+      
+      {props.symbol === "ncr" && <Symbol x={props.x - 6} y={props.y - 10} value="N" />}
+      {props.symbol === "ncr" && <Symbol x={props.x} y={props.y - 11} value="C" />}
+      {props.symbol === "ncr" && <Symbol x={props.x + 6} y={props.y - 10} value="R" />}
+      
+      {props.symbol === "ncr" && <LeverLamp x={props.x - 6} y={props.y - 13} />}
+      {props.symbol === "ncr" && <LeverLamp x={props.x + 6} y={props.y - 13} />}
+    
     </g>
   )
+}
+
+type Symbol_props = {
+  x: number,
+  y: number,
+  value: string,
+}
+
+function Symbol(props: Symbol_props) {
+  return (
+    <text
+      x={props.x} 
+      y={props.y}
+      textAnchor="middle"
+      dominantBaseline="central"
+      fill={white}
+      className="font"
+      fontSize="2px"
+    >{props.value}</text>
+  )
+}
+
+type LeverLamp_props = {
+  x: number,
+  y: number,
+}
+
+function LeverLamp(props: LeverLamp_props) {
+  return (
+    <circle cx={props.x} cy={props.y} r="1" />
+  )
+
 }
 
 type Switch_props = {
@@ -677,14 +715,15 @@ type Time_props = {
 
 function Time(props: Time_props) {
   var Data: template__Data[] = props.Data
-  const [content_index, set_content_index] = React.useState<number>(0);
+  const [contentIndex, setContentIndex] = React.useState<number>(0);
   const content = Data[props.index].content
 
-  const content_index_change = ((value: any) => {
-    const id: number = Number(value.currentTarget.getAttribute("id"))
-    if (content_index + id >= 0 && content_index + id < Data[props.index].content.length) {
-      set_content_index(content_index + id)
-    }
+  const contentIndexBefore: React.MouseEventHandler<SVGGElement> = ((value: any) => {
+    contentIndex - 1 >= 0 && setContentIndex(contentIndex - 1)
+  })
+
+  const contentIndexAfter = ((value: any) => {
+    contentIndex + 1 < content.length && setContentIndex(contentIndex + 1)
   })
 
   let minus: number = 0
@@ -704,11 +743,11 @@ function Time(props: Time_props) {
         <clipPath id={"clip" + props.index}>
           <path d={`M ${props.x} ${props.y} H ${props.x + 80} V ${props.y + 27.5} H ${props.x} Z`}  />
         </clipPath>
-        <ContentLender x={props.x} y={props.y - 5} content={content[content_index - 2]} index={content_index - 2} />
-        <ContentLender x={props.x} y={props.y + 2.5} content={content[content_index - 1]} index={content_index - 1} />
-        <ContentLender x={props.x} y={props.y + 10} content={content[content_index]} index={content_index}  />
-        <ContentLender x={props.x} y={props.y + 17.5} content={content[content_index + 1]} index={content_index + 1}  />
-        <ContentLender x={props.x} y={props.y + 25} content={content[content_index + 2]} index={content_index + 2} />
+        <ContentLender x={props.x} y={props.y - 5} content={content[contentIndex - 2]} index={contentIndex - 2} />
+        <ContentLender x={props.x} y={props.y + 2.5} content={content[contentIndex - 1]} index={contentIndex - 1} />
+        <ContentLender x={props.x} y={props.y + 10} content={content[contentIndex]} index={contentIndex}  />
+        <ContentLender x={props.x} y={props.y + 17.5} content={content[contentIndex + 1]} index={contentIndex + 1}  />
+        <ContentLender x={props.x} y={props.y + 25} content={content[contentIndex + 2]} index={contentIndex + 2} />
       </g>
 
       <rect x={props.x} y={props.y} width="80" height="27.5" fill-opacity={0} stroke={black} strokeWidth="0.5px" />
@@ -722,8 +761,19 @@ function Time(props: Time_props) {
       <path d={`M ${props.x + 50} ${props.y} V ${props.y + 27.5}`} stroke={black} strokeWidth="0.5px" />
       <path d={`M ${props.x + 60} ${props.y} V ${props.y + 27.5}`} stroke={black} strokeWidth="0.5px" />
 
-      <rect className="active" x={props.x + (85 - minus)} y={props.y + 2.5} width="7.5" height="7.5" fill={red} stroke={black} strokeWidth="0.5px" onClick={content_index_change} id="-1" />
-      <rect className="active" x={props.x + (85 - minus)} y={props.y + 17.5} width="7.5" height="7.5" fill={blue} stroke={black} strokeWidth="0.5px" onClick={content_index_change} id="1" />
+      <g onClick={contentIndexBefore} className="active" >
+        <rect x={props.x + (85 - minus)} y={props.y + 2.5} width="7.5" height="7.5" fill={red} stroke={black} strokeWidth="0.5px" />
+        <text className="text" x={props.x + (88.75 - minus)} y={props.y + 8.5} textAnchor="middle" fill={white}>前</text>
+      </g>
+      <g onClick={contentIndexAfter} className="active">
+        <rect className="active" x={props.x + (85 - minus)} y={props.y + 17.5} width="7.5" height="7.5" fill={blue} stroke={black} strokeWidth="0.5px" />
+        <text className="text" x={props.x + (88.75 - minus)} y={props.y + 23.5} textAnchor="middle" fill={white}>後</text>
+      </g>
+      
+      {/* <rect className="active" x={props.x + (85 - minus)} y={props.y + 17.5} width="7.5" height="7.5" fill={blue} stroke={black} strokeWidth="0.5px" onClick={contentIndex_change} id="1" /> */}
+
+      
+      {/* <text className="text" x={props.x + 88.75} y={props.y + 23.5} textAnchor="middle" fill={white}>後</text> */}
 
       <text className="text" x={props.x + 40} y={props.y - 2.5} textAnchor="middle" fill={black}>{Data[props.index].name}</text>
     </g>
