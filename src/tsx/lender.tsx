@@ -177,9 +177,11 @@ function Lender(props: Lender_props) {
         </g>
         {/* 3 */}
         <g>
-          <Rail points="285 97.5 244 97.5 244 95.5 240 97.5 240 102.5 244 104.5 244 102.5 285 102.5 285 97.5" color={red} use={props.use} index={5} />
+          <Rail points="270 97.5 244 97.5 244 95.5 240 97.5 240 102.5 244 104.5 244 102.5 270 102.5 270 97.5" color={red} use={props.use} index={5} />
+          <Rail points="285 97.5 300 97.5 300 102.5 285 102.5 285 97.5" color={red} use={props.use} index={5} />
           <Rail points="165 97.5 235 97.5 235 102.5 165 102.5 165 97.5" color={red} use={props.use} index={5} />
-          <text style={caption} transform="translate(235.34 102.29)"><tspan x="0" y="0">3</tspan></text>
+          <text style={caption} x="237.5" y="100">3</text>
+          <text style={caption} x="277.5" y="100">上本</text>
         </g>
         {/* 02 10 */}
         <g>
@@ -221,7 +223,7 @@ function Lender(props: Lender_props) {
         <g>
           <Rail points="244 145.5 240 147.5 240 152.5 244 154.5 244 152.5 295 152.5 295 147.5 244 147.5 244 145.5" color={blue} use={props.use} index={15} />
           <Rail points="231 145.5 231 147.5 180 147.5 180 152.5 231 152.5 231 154.5 235 152.5 235 147.5 231 145.5" color={blue} use={props.use} index={15} />
-          <text style={caption} transform="translate(235.34 152.29)"><tspan x="0" y="0">5</tspan></text>
+          <text style={caption} x="237.5" y="150">5</text>
         </g>
         {/* 08 */}
         <g>
@@ -233,7 +235,7 @@ function Lender(props: Lender_props) {
         <g>
           <Rail points="244 122.5 255 122.5 255 117.5 244 117.5 244 115.5 240 117.5 240 122.5 244 124.5 244 122.5" color={blue} use={props.use} index={17} />
           <Rail points="231 117.5 165 117.5 165 122.5 231 122.5 231 124.5 235 122.5 235 117.5 231 115.5 231 117.5" color={blue} use={props.use} index={17} />
-          <text style={caption} transform="translate(235.34 122.29)"><tspan x="0" y="0">4</tspan></text>
+          <text style={caption} x="237.5" y="120">4</text>
         </g>
         
         <Lamp x={30} y={50} rotate={0} index={0} route={props.route} train={props.train} />
@@ -383,14 +385,14 @@ function Lender(props: Lender_props) {
         
         {/* 着点スイッチ */}
         <g>
-          <Switch x={225} y={50} func={props.destination} color={white} stroke={black} index={0} />
-          <Switch x={225} y={100} func={props.destination} color={white} stroke={black} index={1} />
-          <Switch x={425} y={50} func={props.destination} color={white} stroke={black} index={2} />
-          <Switch x={75} y={100} func={props.destination} color={white} stroke={black} index={3} />
-          <Switch x={225} y={70} func={props.destination} color={white} stroke={black} index={4} />
-          <Switch x={225} y={150} func={props.destination} color={white} stroke={black} index={5} />
-          <Switch x={400} y={150} func={props.destination} color={white} stroke={black} index={6} />
-          <Switch x={225} y={120} func={props.destination} color={white} stroke={black} index={7} />
+          <Switch x={225} y={50} func={props.destination} color={white} stroke={black} value="A" />
+          <Switch x={225} y={100} func={props.destination} color={white} stroke={black} value="B" />
+          <Switch x={425} y={50} func={props.destination} color={white} stroke={black} value="B" />
+          <Switch x={75} y={100} func={props.destination} color={white} stroke={black} value="D" />
+          <Switch x={225} y={70} func={props.destination} color={white} stroke={black} value="E" />
+          <Switch x={225} y={150} func={props.destination} color={white} stroke={black} value="F" />
+          <Switch x={400} y={150} func={props.destination} color={white} stroke={black} value="G" />
+          <Switch x={225} y={120} func={props.destination} color={white} stroke={black} value="H" />
         </g>
         
         {/* 非常てこ */}
@@ -460,13 +462,13 @@ function Signal(props: Signal_props) {
   
   return (
     <>
-      <circle cx={x(9)} cy={props.y} r="2.75" fill="transparent" stroke={white} stroke-width={0.5} />
-      <path d={`M${x(11)} ${y(2)} ${x(7)} ${y(-2)} M ${x(7)} ${y(2)} ${x(11)} ${y(-2)}`} stroke={white} stroke-width={0.5} />
+      <circle cx={x(9)} cy={props.y} r="2.75" fill="transparent" stroke={white} strokeWidth={0.5} />
+      <path d={`M${x(11)} ${y(2)} ${x(7)} ${y(-2)} M ${x(7)} ${y(2)} ${x(11)} ${y(-2)}`} stroke={white} strokeWidth={0.5} />
       <circle cx={x(9)} cy={props.y} r="1.5" fill={red} stroke={white} strokeWidth={0.25} />
-      {/* <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" /> */}
-      {props.dir === "l" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
-      {props.dir === "r" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
-      {props.dir === "r_" && <path d={`M${x(5.25)} ${y(-4.5)} V ${y(0)} H ${x(6)}`} stroke={white} stroke-width={0.5} stroke-linecap="square" />}
+      {/* <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} strokeWidth={0.5} strokeLinecap="square" /> */}
+      {props.dir === "l" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} strokeWidth={0.5} strokeLinecap="square" />}
+      {props.dir === "r" && <path d={`M${x(6)} ${props.y} H ${x(0)} m 0 -0.75 v 1.5`} stroke={white} strokeWidth={0.5} strokeLinecap="square" />}
+      {props.dir === "r_" && <path d={`M${x(5.25)} ${y(-4.5)} V ${y(0)} H ${x(6)}`} stroke={white} strokeWidth={0.5} strokeLinecap="square" />}
     </>
   )
 }
@@ -599,12 +601,12 @@ type Switch_props = {
   color: string,
   stroke: string,
   func: any,
-  index: number,
+  value: string,
 };
 
 function Switch(props: Switch_props) {
   const func = () => {
-    props.func(props.index)
+    props.func(props.value)
   }
 
   return (
@@ -628,7 +630,7 @@ function Switch(props: Switch_props) {
         className="font"
         fontSize="2px"
       >
-        {props.index}
+        {props.value}
       </text>
     </g>
 
@@ -750,7 +752,7 @@ function Time(props: Time_props) {
         <ContentLender x={props.x} y={props.y + 25} content={content[contentIndex + 2]} index={contentIndex + 2} />
       </g>
 
-      <rect x={props.x} y={props.y} width="80" height="27.5" fill-opacity={0} stroke={black} strokeWidth="0.5px" />
+      <rect x={props.x} y={props.y} width="80" height="27.5" fillOpacity={0} stroke={black} strokeWidth="0.5px" />
 
       <path d={`M ${props.x} ${props.y + 2.5} H ${props.x + 80}`} stroke={black} strokeWidth="0.5px" />
       <path d={`M ${props.x} ${props.y + 10} H ${props.x + 80}`} stroke={black} strokeWidth="0.5px" />
