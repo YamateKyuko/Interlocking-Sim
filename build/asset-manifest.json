@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e2c416fb.css",
+    "main.js": "/static/js/main.38ab384b.js",
+    "static/media/Interlocking-Sim.svg": "/static/media/Interlocking-Sim.fc1a7073a26beb3253aa525b8bef5ab1.svg",
+    "index.html": "/index.html",
+    "main.e2c416fb.css.map": "/static/css/main.e2c416fb.css.map",
+    "main.38ab384b.js.map": "/static/js/main.38ab384b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2c416fb.css",
+    "static/js/main.38ab384b.js"
+  ]
+}
